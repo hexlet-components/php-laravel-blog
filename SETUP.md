@@ -14,4 +14,8 @@ $ php artistan migrate
 $ add .psysh # https://stackoverflow.com/questions/53773098/php-artisan-tinker-crashing-from-any-command
 # for relaoding https://github.com/furey/tinx
 $ php artisan tinker
+
+$ php artisan make:controller ArticleController --resource
+# add Route::resource('articles', 'ArticleController');
+$ php artisan route:list
 ```
