@@ -19,4 +19,5 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::resource('/articles', 'ArticleController');
+Route::resource('articles', 'ArticleController');
+/* Route::resource('articles.comments', 'ArticleController'); */

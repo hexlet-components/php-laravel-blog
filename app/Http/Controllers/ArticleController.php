@@ -14,7 +14,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('article.index');
+        $articles = Article::paginate();
+        return view('article.index', compact('articles'));
     }
 
     /**
@@ -24,7 +25,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        $article = new Article();
+        return view('article.create', compact('article'));
     }
 
     /**
@@ -35,7 +37,17 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|unique:articles',
+            'body' => 'required|min:100',
+        ]);
+
+        $article = new Article();
+        $article->fill($request->all());
+        $article->save();
+        return redirect()
+            ->route('articles.index')
+            ->with('success', 'Article created successfully');
     }
 
     /**
@@ -46,7 +58,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        return view('article.show', compact('article'));
     }
 
     /**
@@ -57,7 +69,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('article.edit', compact('article'));
     }
 
     /**
@@ -69,7 +81,16 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|unique:articles,' . $article->id,
+            'body' => 'required|min:100',
+        ]);
+
+        $article->fill($request->all());
+        $article->save();
+        return redirect()
+            ->route('articles.index')
+            ->with('success', 'Article created successfully');
     }
 
     /**
