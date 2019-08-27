@@ -15,12 +15,10 @@
             <a href="/about">About</a>
             <a href="/articles">Articles</a>
 
-            <!-- BEGIN -->
-                <h1>@yield('header')</h1>
-                <div>
-                    @yield('content')
-                </div>
-            <!-- END -->
+            <h1>@yield('header')</h1>
+            <div>
+                @yield('content')
+            </div>
         </div>
     </body>
 </html>
