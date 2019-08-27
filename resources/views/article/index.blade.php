@@ -17,6 +17,7 @@
                         <td>{{$article->id}}</td>
                         <td><a href="{{route('articles.show', $article->id)}}">{{$article->name}}</a></td>
                         <td><a href="{{route('articles.edit', $article->id)}}">Edit</td>
+                        <td><a href="{{route('articles.destroy', $article->id)}}" data-confirm="Вы уверены?" data-method="delete">Delete</td>
                     </tr>
                 @endforeach
             </tbody>
