@@ -17,3 +17,6 @@ migrate:
 
 console:
 	php artisan tinker
+
+test:
+	composer run-script phpunit
