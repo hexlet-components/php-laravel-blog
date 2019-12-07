@@ -22,7 +22,7 @@ touch database/database.sqlite
 
 $ php artisan make:model Article --migration
 # update migration (add name and body)
-$ php artistan migrate
+$ php artisan migrate
 $ add .psysh # https://stackoverflow.com/questions/53773098/php-artisan-tinker-crashing-from-any-command
 # for relaoding https://github.com/furey/tinx
 $ php artisan tinker
