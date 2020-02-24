@@ -1,2 +1,1 @@
-backend: make serve
-frontend: make watch
+web: vendor/bin/heroku-php-nginx

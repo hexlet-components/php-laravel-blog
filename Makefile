@@ -1,8 +1,9 @@
 start:
-	npx nf start
+	heroku local -f Procfile.dev
 
 setup:
 	composer install
+	php artisan migrate
 	npm install
 	touch database/database.sqlite || true
 
