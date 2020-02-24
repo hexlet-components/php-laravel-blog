@@ -21,3 +21,6 @@ console:
 
 test:
 	composer run-script phpunit
+
+deploy:
+	git push heroku
