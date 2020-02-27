@@ -19,8 +19,14 @@ migrate:
 console:
 	php artisan tinker
 
+log:
+	tail -f storage/logs/laravel.log
+
+lint:
+	composer exec phpcs --verbose
+
 test:
-	composer run-script phpunit
+	composer phpunit
 
 deploy:
 	git push heroku
