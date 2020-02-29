@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function show($id)
     {
-        $user = \App\User::findOrFail($id);
+        $user = User::findOrFail($id);
         return view('user.show', compact('user'));
     }
 
     public function create()
     {
-        $user = new \App\User();
+        $user = new User();
         return view('user.create', compact('user'));
     }
 
@@ -27,6 +28,6 @@ class UserController extends Controller
         App\User::create($request->all());
         return redirect()
             ->route('user.index')
-            ->with('success', 'Video created successfully');
+            ->with('success', 'User created successfully');
     }
 }
