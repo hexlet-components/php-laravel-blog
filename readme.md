@@ -1,11 +1,11 @@
 ### Requirements
 
-* PHP ^7.1.3
-* Packages: php7.3-mbstring php7.1-curl php7.1-dom php7.1-xml php7.1-zip php7.1-sqlite3 (or higher)
-* Composer
-* Node.js & npm
-* SQLite for local
-* [heroku cli](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
+  * PHP ^7.1.3
+  * Extensions: mbstring, curl, dom, xml,zip, sqlite3
+  * Composer
+  * Node.js & npm
+  * SQLite for local
+  * [heroku cli](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
 
 ### Setup
 
