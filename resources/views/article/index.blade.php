@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Список статей</h1>
+    <h1>@lang('views.article.index.list')</h1>
+    <a href="{{ route('articles.create') }}">@lang('views.article.index.addNewArticle')</a>
     <div>
         <table>
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>Name</td>
-                    <td>Actions</td>
+                    <td>@lang('models.article.id')</td>
+                    <td>@lang('models.article.name')</td>
+                    <td>@lang('views.article.index.actions')</td>
                 </tr>
             </thead>
             <tbody>

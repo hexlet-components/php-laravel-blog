@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::resource('pages', 'PageController');
 
 Route::resource('articles', 'ArticleController');
 /* Route::resource('articles.comments', 'ArticleController'); */

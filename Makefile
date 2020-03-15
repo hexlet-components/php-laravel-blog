@@ -25,7 +25,7 @@ log:
 	tail -f storage/logs/laravel.log
 
 test:
-	composer phpunit
+	php artisan test
 
 deploy:
 	git push heroku

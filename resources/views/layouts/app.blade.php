@@ -12,8 +12,12 @@
     <body>
         <div class="container mt-4">
             <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/articles">Articles</a>
+            <a href="{{ route('pages.show', ['page' => 'about']) }}">
+                @lang('layouts.app.about')
+            </a>
+            <a href="{{ route('articles.index') }}">
+                @lang('layouts.app.articles')
+            </a>
 
             <h1>@yield('header')</h1>
             <div>
