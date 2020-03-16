@@ -37,6 +37,7 @@ class ArticleControllerTest extends TestCase
     {
         $data = factory(Article::class)->make()->toArray();
         $response = $this->post(route('articles.store'), $data);
+        $response->assertSessionHasNoErrors();
         $response->assertStatus(302);
 
         $this->assertDatabaseHas('articles', ['name' => $data['name']]);
@@ -47,6 +48,7 @@ class ArticleControllerTest extends TestCase
         $article = factory(Article::class)->create();
         $data = factory(Article::class)->make()->toArray();
         $response = $this->patch(route('articles.update', $article), $data);
+        $response->assertSessionHasNoErrors();
         $response->assertStatus(302);
 
         $this->assertDatabaseHas('articles', ['name' => $data['name']]);
@@ -56,6 +58,7 @@ class ArticleControllerTest extends TestCase
     {
         $article = factory(Article::class)->create();
         $response = $this->delete(route('articles.destroy', [$article]));
+        $response->assertSessionHasNoErrors();
         $response->assertStatus(302);
 
         $this->assertDatabaseMissing('articles', ['id' => $article->id]);
