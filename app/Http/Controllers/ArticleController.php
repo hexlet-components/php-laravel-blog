@@ -37,13 +37,12 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $data = $this->validate($request, [
             'name' => 'required|unique:articles',
             'body' => 'required|min:100',
         ]);
 
-        $article = new Article();
-        $article->fill($request->all());
+        $article = new Article($data);
         $article->save();
         return redirect()
             ->route('articles.index')
@@ -81,12 +80,12 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        $this->validate($request, [
+        $data = $this->validate($request, [
             'name' => 'required|unique:articles,' . $article->id,
             'body' => 'required|min:100',
         ]);
 
-        $article->fill($request->all());
+        $article->fill($data);
         $article->save();
         return redirect()
             ->route('articles.index')

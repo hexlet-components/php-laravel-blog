@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(Article::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'body' => $faker->randomHtml
+        'body' => $faker->text,
     ];
 });

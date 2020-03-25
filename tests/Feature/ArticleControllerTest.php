@@ -35,23 +35,25 @@ class ArticleControllerTest extends TestCase
 
     public function testStore()
     {
-        $data = factory(Article::class)->make()->toArray();
+        $factoryData = factory(Article::class)->make()->toArray();
+        $data = \Arr::only($factoryData, ['name', 'body']);
         $response = $this->post(route('articles.store'), $data);
         $response->assertSessionHasNoErrors();
         $response->assertStatus(302);
 
-        $this->assertDatabaseHas('articles', ['name' => $data['name']]);
+        $this->assertDatabaseHas('articles', $data);
     }
 
     public function testUpdate()
     {
         $article = factory(Article::class)->create();
-        $data = factory(Article::class)->make()->toArray();
+        $factoryData = factory(Article::class)->make()->toArray();
+        $data = \Arr::only($factoryData, ['name', 'body']);
         $response = $this->patch(route('articles.update', $article), $data);
         $response->assertSessionHasNoErrors();
         $response->assertStatus(302);
 
-        $this->assertDatabaseHas('articles', ['name' => $data['name']]);
+        $this->assertDatabaseHas('articles', $data);
     }
 
     public function testDestroy()
