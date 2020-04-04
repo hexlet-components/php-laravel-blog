@@ -1,3 +1,7 @@
+# php-laravel-blog
+
+[![github action status](https://github.com/hexlet-components/php-laravel-blog/workflows/Master%20workflow/badge.svg)](https://github.com/hexlet-components/php-laravel-blog/actions)
+
 ### Requirements
 
   * PHP ^7.1.3
@@ -40,3 +44,7 @@ $ php artisan make:controller ArticleController --resource
 # add Route::resource('articles', 'ArticleController');
 $ php artisan route:list
 ```
+
+[![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/hexletguides.github.io/master/images/hexlet_logo128.png)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=php-laravel-blog)
+
+This repository is created and maintained by the team and the community of Hexlet, an educational project. [Read more about Hexlet (in Russian)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=php-laravel-blog).
