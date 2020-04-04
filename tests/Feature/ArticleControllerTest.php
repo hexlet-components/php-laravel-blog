@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-
 use App\Article;
 
 class ArticleControllerTest extends TestCase
