@@ -24,4 +24,18 @@
         </properties>
     </rule>
 
+	<exclude-pattern>app/Console/Kernel.php</exclude-pattern>
+	<exclude-pattern>app/Http/Controllers/Controller.php</exclude-pattern>
+    <exclude-pattern>app/Http/Controllers/Auth/*</exclude-pattern>
+	<exclude-pattern>bootstrap/cache/*</exclude-pattern>
+	<exclude-pattern>config/*</exclude-pattern>
+	<exclude-pattern>public/index.php</exclude-pattern>
+	<exclude-pattern>storage/framework/views/*</exclude-pattern>
+	<exclude-pattern>server.php</exclude-pattern>
+	<exclude-pattern>*/migrations/*</exclude-pattern>
+	<exclude-pattern>*/seeds/*</exclude-pattern>
+	<exclude-pattern>*/*.blade.php</exclude-pattern>
+	<exclude-pattern>*/*.js</exclude-pattern>
+	<exclude-pattern>vendor/*</exclude-pattern>
+
 </ruleset>
