@@ -16,20 +16,20 @@ class ArticleControllerTest extends TestCase
     public function testIndex()
     {
         $response = $this->get(route('articles.index'));
-        $response->assertStatus(200);
+        $response->assertOk();
     }
 
     public function testCreate()
     {
         $response = $this->get(route('articles.create'));
-        $response->assertStatus(200);
+        $response->assertOk();
     }
 
     public function testEdit()
     {
         $article = factory(Article::class)->create();
         $response = $this->get(route('articles.edit', [$article]));
-        $response->assertStatus(200);
+        $response->assertOk();
     }
 
     public function testStore()
@@ -38,7 +38,7 @@ class ArticleControllerTest extends TestCase
         $data = \Arr::only($factoryData, ['name', 'body']);
         $response = $this->post(route('articles.store'), $data);
         $response->assertSessionHasNoErrors();
-        $response->assertStatus(302);
+        $response->assertRedirect();
 
         $this->assertDatabaseHas('articles', $data);
     }
@@ -50,7 +50,7 @@ class ArticleControllerTest extends TestCase
         $data = \Arr::only($factoryData, ['name', 'body']);
         $response = $this->patch(route('articles.update', $article), $data);
         $response->assertSessionHasNoErrors();
-        $response->assertStatus(302);
+        $response->assertRedirect();
 
         $this->assertDatabaseHas('articles', $data);
     }
@@ -60,7 +60,7 @@ class ArticleControllerTest extends TestCase
         $article = factory(Article::class)->create();
         $response = $this->delete(route('articles.destroy', [$article]));
         $response->assertSessionHasNoErrors();
-        $response->assertStatus(302);
+        $response->assertRedirect();
 
         $this->assertDatabaseMissing('articles', ['id' => $article->id]);
     }
