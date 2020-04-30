@@ -1,16 +1,13 @@
 start:
-	heroku local -f Procfile.dev
+	php artisan serve --host 0.0.0.0
 
 setup:
 	composer install
-	cp -n .env.example .env
+	cp -n .env.example .env|| true
 	php artisan key:gen --ansi
-	touch database/database.sqlite || true
 	php artisan migrate
+	php artisan db:seed
 	npm install
-
-serve:
-	php artisan serve
 
 watch:
 	npm run watch
@@ -35,3 +32,24 @@ lint:
 
 lint-fix:
 	composer phpcbf
+
+compose:
+	docker-compose up
+
+compose-test:
+	docker-compose run web make test
+
+compose-bash:
+	docker-compose run web bash
+
+compose-setup: compose-build
+	docker-compose run web make setup
+
+compose-build:
+	docker-compose build
+
+compose-db:
+	docker-compose exec db psql -U postgres
+
+compose-down:
+	docker-compose down -v
