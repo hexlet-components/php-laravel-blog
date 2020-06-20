@@ -13,6 +13,15 @@
 
 ### Setup
 
+For Docker setup update `.env.example`
+```
+DB_CONNECTION=pgsql
+DB_HOST=db
+DB_DATABASE=postgres
+DB_USERNAME=postgres
+DB_PASSWORD=password
+```
+
 ```sh
 $ make setup
 ```
@@ -23,12 +32,12 @@ $ make setup
 $ make start
 ```
 
-### From Scatch
+### From Scratch
 
 ```sh
 $ composer create-project --prefer-dist laravel/laravel hexlet-laravel-blog
 $ cd hexlet-laravel-blog
-$ php aristan serve
+$ make start # Open http://localhost:8000
 
 touch database/database.sqlite
 # update .env.example (DB_CONNECTION DB_DATABASE)
