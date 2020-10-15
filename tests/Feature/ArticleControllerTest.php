@@ -3,14 +3,14 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use App\Article;
+use App\Models\Article;
 
 class ArticleControllerTest extends TestCase
 {
     protected function setUp(): void
     {
         parent::setUp();
-        factory(Article::class, 2)->make();
+        Article::factory()->count(2)->make();
     }
 
     public function testIndex()
@@ -27,14 +27,14 @@ class ArticleControllerTest extends TestCase
 
     public function testEdit()
     {
-        $article = factory(Article::class)->create();
+        $article = Article::factory()->create();
         $response = $this->get(route('articles.edit', [$article]));
         $response->assertOk();
     }
 
     public function testStore()
     {
-        $factoryData = factory(Article::class)->make()->toArray();
+        $factoryData = Article::factory()->make()->toArray();
         $data = \Arr::only($factoryData, ['name', 'body']);
         $response = $this->post(route('articles.store'), $data);
         $response->assertSessionHasNoErrors();
@@ -45,8 +45,8 @@ class ArticleControllerTest extends TestCase
 
     public function testUpdate()
     {
-        $article = factory(Article::class)->create();
-        $factoryData = factory(Article::class)->make()->toArray();
+        $article = Article::factory()->create();
+        $factoryData = Article::factory()->make()->toArray();
         $data = \Arr::only($factoryData, ['name', 'body']);
         $response = $this->patch(route('articles.update', $article), $data);
         $response->assertSessionHasNoErrors();
@@ -57,7 +57,7 @@ class ArticleControllerTest extends TestCase
 
     public function testDestroy()
     {
-        $article = factory(Article::class)->create();
+        $article = Article::factory()->create();
         $response = $this->delete(route('articles.destroy', [$article]));
         $response->assertSessionHasNoErrors();
         $response->assertRedirect();
