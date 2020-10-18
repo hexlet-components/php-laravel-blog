@@ -4,7 +4,7 @@
 
 ### Requirements
 
-  * PHP ^7.1.3
+  * PHP ^7.3.0
   * Extensions: mbstring, curl, dom, xml,zip, sqlite3
   * Composer
   * Node.js & npm
