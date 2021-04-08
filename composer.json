@@ -18,7 +18,7 @@
     },
     "require-dev": {
         "facade/ignition": "^2.5",
-        "fzaninotto/faker": "^1.9.1",
+        "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
         "phpunit/phpunit": "^9.3.3",
