@@ -13,11 +13,6 @@
     <file>routes</file>
     <file>tests</file>
     <file>database</file>
-    <rule ref="PSR12">
-    </rule>
-    <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
-        <exclude-pattern>database/</exclude-pattern>
-    </rule>
     <rule ref="Generic.ControlStructures.InlineControlStructure">
         <properties>
             <property name="error" value="true"/>
