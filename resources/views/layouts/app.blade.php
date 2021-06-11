@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="container mt-4">
-            <a href="/">Home</a>
+            <a href="/">@lang('layouts.app.home')</a>
             <a href="{{ route('pages.show', ['page' => 'about']) }}">
                 @lang('layouts.app.about')
             </a>
