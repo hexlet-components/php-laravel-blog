@@ -36,9 +36,9 @@ class ArticleControllerTest extends TestCase
     {
         $factoryData = Article::factory()->make()->toArray();
         $data = \Arr::only($factoryData, ['name', 'body']);
-        $response = $this->post(route('articles.store'), $data);
+        $response = $this->followingRedirects()->post(route('articles.store'), $data);
         $response->assertSessionHasNoErrors();
-        $response->assertRedirect();
+        $response->assertSeeText($data['name']);
 
         $this->assertDatabaseHas('articles', $data);
     }
@@ -48,9 +48,9 @@ class ArticleControllerTest extends TestCase
         $article = Article::factory()->create();
         $factoryData = Article::factory()->make()->toArray();
         $data = \Arr::only($factoryData, ['name', 'body']);
-        $response = $this->patch(route('articles.update', $article), $data);
+        $response = $this->followingRedirects()->patch(route('articles.update', $article), $data);
         $response->assertSessionHasNoErrors();
-        $response->assertRedirect();
+        $response->assertSeeText($data['name']);
 
         $this->assertDatabaseHas('articles', $data);
     }
@@ -60,7 +60,7 @@ class ArticleControllerTest extends TestCase
         $article = Article::factory()->create();
         $response = $this->delete(route('articles.destroy', [$article]));
         $response->assertSessionHasNoErrors();
-        $response->assertRedirect();
+        $response->assertRedirect(route('articles.index'));
 
         $this->assertDatabaseMissing('articles', ['id' => $article->id]);
     }
