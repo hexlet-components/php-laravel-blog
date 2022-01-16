@@ -24,7 +24,7 @@ class ArticleFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'body' => $this->faker->text(150),
+            'body' => \Str::random(100),
         ];
     }
 }
