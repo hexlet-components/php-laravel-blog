@@ -4,7 +4,7 @@
 
 ### Requirements
 
-  * PHP ^7.4.0
+  * PHP ^7.4 || ^8.1
   * Extensions: mbstring, curl, dom, xml,zip, sqlite3
   * Composer
   * Node.js & npm
@@ -22,38 +22,40 @@ DB_USERNAME=postgres
 DB_PASSWORD=password
 ```
 
-```sh
-$ make setup
+```bash
+make setup
 ```
 
 ### Run
 
-```sh
-$ make start
+```bash
+make start
 ```
 
 ### From Scratch
 
-```sh
-$ composer create-project --prefer-dist laravel/laravel hexlet-laravel-blog
-$ cd hexlet-laravel-blog
-$ make start # Open http://localhost:8000
+```bash
+composer create-project --prefer-dist laravel/laravel hexlet-laravel-blog
+cd hexlet-laravel-blog
+make start # Open http://localhost:8000
 
 touch database/database.sqlite
 # update .env.example (DB_CONNECTION DB_DATABASE)
 
-$ php artisan make:model Article --migration
+php artisan make:model Article --migration
 # update migration (add name and body)
-$ php artisan migrate
-$ add .psysh # https://stackoverflow.com/questions/53773098/php-artisan-tinker-crashing-from-any-command
+php artisan migrate
+add .psysh # https://stackoverflow.com/questions/53773098/php-artisan-tinker-crashing-from-any-command
 # for relaoding https://github.com/furey/tinx
-$ php artisan tinker
+php artisan tinker
 
-$ php artisan make:controller ArticleController --resource
+php artisan make:controller ArticleController --resource
 # add Route::resource('articles', 'ArticleController');
-$ php artisan route:list
+php artisan route:list
 ```
 
 [![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/assets/master/images/hexlet_logo128.png)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=php-laravel-blog)
 
 This repository is created and maintained by the team and the community of Hexlet, an educational project. [Read more about Hexlet (in Russian)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=php-laravel-blog).
+
+See most active contributers on [hexlet-friends](https://friends.hexlet.io/).
