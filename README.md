@@ -1,10 +1,10 @@
 # php-laravel-blog
 
-[![github action status](https://github.com/hexlet-components/php-laravel-blog/workflows/Master%20workflow/badge.svg)](https://github.com/hexlet-components/php-laravel-blog/actions)
+[![github action status](https://github.com/hexlet-components/php-laravel-blog/workflows/PHP%20CI/badge.svg)](../../actions)
 
 ### Requirements
 
-  * PHP ^7.3.0
+  * PHP ^7.4.0
   * Extensions: mbstring, curl, dom, xml,zip, sqlite3
   * Composer
   * Node.js & npm
