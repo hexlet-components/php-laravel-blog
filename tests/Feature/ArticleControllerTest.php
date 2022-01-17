@@ -36,10 +36,11 @@ class ArticleControllerTest extends TestCase
     {
         $factoryData = Article::factory()->make()->toArray();
         $data = \Arr::only($factoryData, ['name', 'body']);
-        $response = $this->followingRedirects()->post(route('articles.store'), $data);
+        $response = $this->post(route('articles.store'), $data);
+        $response->assertRedirect(route('articles.index'));
         $response->assertSessionHasNoErrors();
-        $response->assertSeeText($data['name']);
 
+        $response = $this->get(route('articles.index'))->assertSeeText($data['name']);
         $this->assertDatabaseHas('articles', $data);
     }
 
@@ -48,10 +49,11 @@ class ArticleControllerTest extends TestCase
         $article = Article::factory()->create();
         $factoryData = Article::factory()->make()->toArray();
         $data = \Arr::only($factoryData, ['name', 'body']);
-        $response = $this->followingRedirects()->patch(route('articles.update', $article), $data);
+        $response = $this->patch(route('articles.update', $article), $data);
+        $response->assertRedirect(route('articles.index'));
         $response->assertSessionHasNoErrors();
-        $response->assertSeeText($data['name']);
 
+        $response = $this->get(route('articles.index'))->assertSeeText($data['name']);
         $this->assertDatabaseHas('articles', $data);
     }
 
