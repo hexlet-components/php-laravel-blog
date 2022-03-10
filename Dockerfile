@@ -18,6 +18,7 @@ WORKDIR /app
 COPY . .
 RUN composer install
 RUN npm ci
+RUN npm run build
 
 RUN > database/database.sqlite
 
