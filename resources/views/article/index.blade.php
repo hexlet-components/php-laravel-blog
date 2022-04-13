@@ -2,9 +2,9 @@
 
 @section('content')
     <h1>@lang('views.article.index.list')</h1>
-    <a href="{{ route('articles.create') }}">@lang('views.article.index.addNewArticle')</a>
+    <a class="text-decoration-none" href="{{ route('articles.create') }}">@lang('views.article.index.addNewArticle')</a>
     <div>
-        <table>
+        <table class="table">
             <thead>
                 <tr>
                     <td>@lang('models.article.id')</td>
@@ -16,9 +16,9 @@
                 @foreach($articles as $article)
                     <tr>
                         <td>{{$article->id}}</td>
-                        <td><a href="{{route('articles.show', $article->id)}}">{{$article->name}}</a></td>
-                        <td><a href="{{route('articles.edit', $article->id)}}">@lang('views.article.index.buttons.edit')</td>
-                        <td><a href="{{route('articles.destroy', $article->id)}}" data-confirm="Вы уверены?" data-method="delete">@lang('views.article.index.buttons.delete')</td>
+                        <td><a class="text-decoration-none" href="{{route('articles.show', $article->id)}}">{{$article->name}}</a></td>
+                        <td><a class="text-decoration-none" href="{{route('articles.edit', $article->id)}}">@lang('views.article.index.buttons.edit')</td>
+                        <td><a class="text-decoration-none" href="{{route('articles.destroy', $article->id)}}" data-confirm="Вы уверены?" data-method="delete">@lang('views.article.index.buttons.delete')</td>
                     </tr>
                 @endforeach
             </tbody>
