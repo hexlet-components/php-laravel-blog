@@ -3,19 +3,20 @@
 [![github action status](https://github.com/hexlet-components/php-laravel-blog/workflows/PHP%20CI/badge.svg)](../../actions)
 [![codecov](https://codecov.io/gh/hexlet-components/php-laravel-blog/branch/main/graph/badge.svg?token=F9TUPCSZVM)](https://codecov.io/gh/hexlet-components/php-laravel-blog)
 
-### Requirements
+## Requirements
 
-  * PHP ^7.4 || ^8.1
-  * Extensions: mbstring, curl, dom, xml,zip, sqlite3
-  * Composer
-  * Node.js & npm
-  * SQLite for local
-  * [heroku cli](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
+* PHP ^7.4 || ^8.1
+* Extensions: mbstring, curl, dom, xml,zip, sqlite3
+* Composer
+* Node.js & npm
+* SQLite for local
+* [heroku cli](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
 
-### Setup
+## Setup
 
 For Docker setup update `.env.example`
-```
+
+```txt
 DB_CONNECTION=pgsql
 DB_HOST=db
 DB_DATABASE=postgres
@@ -27,13 +28,13 @@ DB_PASSWORD=password
 make setup
 ```
 
-### Run
+## Run
 
 ```bash
 make start
 ```
 
-### From Scratch
+## From Scratch
 
 ```bash
 composer create-project --prefer-dist laravel/laravel hexlet-laravel-blog
@@ -57,9 +58,9 @@ php artisan route:list
 
 ---
 
-[![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/assets/master/images/hexlet_logo128.png)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=php-laravel-blog)
+[![Hexlet Ltd. logo](https://raw.githubusercontent.com/Hexlet/assets/master/images/hexlet_logo128.png)](https://ru.hexlet.io?utm_source=github&utm_medium=link&utm_campaign=php-laravel-blog)
 
-This repository is created and maintained by the team and the community of Hexlet, an educational project. [Read more about Hexlet (in Russian)](https://ru.hexlet.io/pages/about?utm_source=github&utm_medium=link&utm_campaign=php-laravel-blog).
+This repository is created and maintained by the team and the community of Hexlet, an educational project. [Read more about Hexlet (in Russian)](https://ru.hexlet.io?utm_source=github&utm_medium=link&utm_campaign=php-laravel-blog).
 
 ---
 
