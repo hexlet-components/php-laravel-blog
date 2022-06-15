@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>О блоге</h1>
-    <p>Эксперименты с Ларавелем на Хекслете</p>
+    <h1>About blog</h1>
+    <p>Experiments with Laravel on Hexlet</p>
 @endsection

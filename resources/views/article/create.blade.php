@@ -3,6 +3,6 @@
 @section('content')
     {{ Form::model($article, ['url' => route('articles.store')]) }}
         @include('article.form')
-        {{ Form::submit('Сохранить') }}
+        {{ Form::submit('Save') }}
     {{ Form::close() }}
 @endsection
