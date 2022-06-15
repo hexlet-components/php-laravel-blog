@@ -3,6 +3,7 @@
 return [
     'app' => [
         'articles' => 'Articles',
-        'about' => 'About'
+        'about' => 'About',
+        'home' => 'Home'
     ]
 ];
