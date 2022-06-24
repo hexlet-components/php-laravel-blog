@@ -48,7 +48,7 @@ php artisan make:model Article --migration
 # update migration (add name and body)
 php artisan migrate
 add .psysh # https://stackoverflow.com/questions/53773098/php-artisan-tinker-crashing-from-any-command
-# for relaoding https://github.com/furey/tinx
+# for reloading https://github.com/furey/tinx
 php artisan tinker
 
 php artisan make:controller ArticleController --resource
@@ -64,4 +64,4 @@ This repository is created and maintained by the team and the community of Hexle
 
 ---
 
-See most active contributers on [hexlet-friends](https://friends.hexlet.io/).
+See most active contributors on [hexlet-friends](https://friends.hexlet.io/).
