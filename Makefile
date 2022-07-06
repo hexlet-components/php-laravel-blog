@@ -3,13 +3,14 @@ start:
 
 setup:
 	composer install
-	cp -n .env.example .env|| true
+	cp -n .env.example .env
 	php artisan key:gen --ansi
 	touch database/database.sqlite
 	php artisan migrate
 	php artisan db:seed
 	npm ci
 	npm run dev
+	make ide-helper
 
 watch:
 	npm run watch
@@ -58,3 +59,9 @@ compose-db:
 
 compose-down:
 	docker-compose down -v
+
+ide-helper:
+	php artisan ide-helper:eloquent
+	php artisan ide-helper:gen
+	php artisan ide-helper:meta
+	php artisan ide-helper:mod -n
