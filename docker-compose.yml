@@ -17,7 +17,7 @@ services:
 
     command: make start
     ports:
-      - "3000:8000"
+      - "8000:8000"
     # env_file: '.env'
     volumes:
       # - "web_static:/web/priv/static"

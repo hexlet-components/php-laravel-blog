@@ -9,7 +9,7 @@ setup:
 	php artisan migrate
 	php artisan db:seed
 	npm ci
-	npm run dev
+	npm run build
 	make ide-helper
 
 watch:
