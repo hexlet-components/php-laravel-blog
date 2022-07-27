@@ -16,7 +16,6 @@
         "laravel-vite-plugin": "^0.5.2",
         "lodash": "^4.17.21",
         "popper.js": "^1.16",
-        "postcss": "^8.4.14",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.54.0",
         "sass-loader": "^13.0.2",
