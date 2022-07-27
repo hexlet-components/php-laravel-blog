@@ -5,7 +5,7 @@ version: '3'
 services:
 
   db:
-    image: postgres:12.2-alpine
+    image: postgres:14.4-bullseye
     environment:
       POSTGRES_PASSWORD: password
     volumes:
@@ -14,7 +14,6 @@ services:
   web:
     build:
       context: .
-
     command: make start
     ports:
       - "8000:8000"

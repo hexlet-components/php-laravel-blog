@@ -23,7 +23,7 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
+            'name' => fake()->name(),
             'body' => \Str::random(100),
         ];
     }
