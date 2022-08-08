@@ -3,6 +3,8 @@
 [![github action status](https://github.com/hexlet-components/php-laravel-blog/workflows/PHP%20CI/badge.svg)](../../actions)
 [![codecov](https://codecov.io/gh/hexlet-components/php-laravel-blog/branch/main/graph/badge.svg?token=F9TUPCSZVM)](https://codecov.io/gh/hexlet-components/php-laravel-blog)
 
+Demo: https://php-laravel-blog.hexlet.app/
+
 ## Requirements
 
 * PHP ^7.4 || ^8.1
