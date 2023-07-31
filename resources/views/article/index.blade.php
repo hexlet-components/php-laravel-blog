@@ -17,8 +17,10 @@
                     <tr>
                         <td>{{$article->id}}</td>
                         <td><a class="text-decoration-none" href="{{route('articles.show', $article->id)}}">{{$article->name}}</a></td>
-                        <td><a class="text-decoration-none" href="{{route('articles.edit', $article->id)}}">@lang('views.article.index.buttons.edit')</td>
-                        <td><a class="text-decoration-none" href="{{route('articles.destroy', $article->id)}}" data-confirm="Are you sure?" data-method="delete">@lang('views.article.index.buttons.delete')</td>
+                        <td>
+                            <a class="text-decoration-none" href="{{route('articles.edit', $article->id)}}">@lang('views.article.index.buttons.edit')
+                            <a class="text-decoration-none text-danger" href="{{route('articles.destroy', $article->id)}}" data-confirm="Are you sure?" data-method="delete">@lang('views.article.index.buttons.delete')
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

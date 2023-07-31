@@ -24,6 +24,6 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.11.5",
-        "jquery-ujs": "^1.2.3"
+        "@rails/ujs": "^7.0.6"
     }
 }
