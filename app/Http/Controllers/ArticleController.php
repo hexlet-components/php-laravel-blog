@@ -12,10 +12,13 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::paginate();
-        return view('article.index', compact('articles'));
+        $articles = $request->get('name')
+            ? Article::whereName('name', 'like', "%{$request->get('name')}%")->paginate()
+            : Article::paginate();
+        $inputName = $request->input('name');
+        return view('article.index', compact('articles', 'inputName'));
     }
 
     /**

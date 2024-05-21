@@ -3,6 +3,12 @@
 @section('content')
     <h1>@lang('views.article.index.list')</h1>
     <a class="text-decoration-none" href="{{ route('articles.create') }}">@lang('views.article.index.addNewArticle')</a>
+    <div class="my-2">
+        {{  html()->form('GET', route('articles.index'))->open() }}
+                {{  html()->input('text', 'name', $inputName) }}
+                {{  html()->submit('Search') }}
+        {{ html()->form()->close() }}
+    </div>
     <div>
         <table class="table">
             <thead>
