@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    {{ Form::model($article, ['url' => route('articles.update', $article), 'method' => 'PATCH']) }}
+    {{ html()->modelForm($article, 'PATCH', route('articles.update', $article))->open() }}
         @include('article.form')
-        {{ Form::submit('Update') }}
-    {{ Form::close() }}
+        {{ html()->submit('Update')->class('btn btn-primary') }}
+    {{ html()->closeModelForm() }}
 @endsection

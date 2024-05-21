@@ -7,8 +7,12 @@
         </ul>
     </div>
 @endif
+<div class="mb-3">
+    {{  html()->label('Name', 'name')->class('form-label') }}
+    {{  html()->input('text', 'name')->class('form-control') }}
 
-{{ Form::label('name', 'Name') }}<br>
-{{ Form::text('name') }}<br>
-{{ Form::label('body', 'Content') }}<br>
-{{ Form::textarea('body') }}<br>
+</div>
+<div class="mb-3">
+    {{  html()->label('Content', 'body')->class('form-label') }}
+    {{  html()->textarea('body')->class('form-control') }}
+</div>
