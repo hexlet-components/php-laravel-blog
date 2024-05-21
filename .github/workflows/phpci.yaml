@@ -36,12 +36,12 @@ jobs:
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: make test-coverage
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
-        with:
-          # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          file: build/logs/clover.xml
-          fail_ci_if_error: true
+      # - name: Upload coverage to Codecov
+      #   uses: codecov/codecov-action@v4
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+      #     file: build/logs/clover.xml
+      #     fail_ci_if_error: true
 
   deploy:
     needs: build
