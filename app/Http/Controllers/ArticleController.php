@@ -15,7 +15,7 @@ class ArticleController extends Controller
     public function index(Request $request)
     {
         $articles = $request->get('name')
-            ? Article::whereName('name', 'like', "%{$request->get('name')}%")->paginate()
+            ? Article::where('name', 'like', "%{$request->get('name')}%")->paginate()
             : Article::paginate();
         $inputName = $request->input('name');
         return view('article.index', compact('articles', 'inputName'));
