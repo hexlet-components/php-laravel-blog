@@ -12,10 +12,13 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::paginate();
-        return view('article.index', compact('articles'));
+        $articles = $request->get('name')
+            ? Article::where('name', 'like', "%{$request->get('name')}%")->paginate()
+            : Article::paginate();
+        $inputName = $request->input('name');
+        return view('article.index', compact('articles', 'inputName'));
     }
 
     /**
@@ -39,7 +42,7 @@ class ArticleController extends Controller
     {
         $data = $this->validate($request, [
             'name' => 'required|unique:articles',
-            'body' => 'required|min:100',
+            'body' => 'required|min:5',
         ]);
 
         $article = new Article($data);
@@ -81,8 +84,8 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $data = $this->validate($request, [
-            'name' => 'required|unique:articles,name,' . $article->id,
-            'body' => 'required|min:100',
+            'name' => "required|unique:articles,name,{$article->id}",
+            'body' => 'required|min:5',
         ]);
 
         $article->fill($data);

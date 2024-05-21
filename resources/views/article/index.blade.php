@@ -3,6 +3,12 @@
 @section('content')
     <h1>@lang('views.article.index.list')</h1>
     <a class="text-decoration-none" href="{{ route('articles.create') }}">@lang('views.article.index.addNewArticle')</a>
+    <div class="my-2">
+        {{  html()->form('GET', route('articles.index'))->open() }}
+                {{  html()->input('text', 'name', $inputName) }}
+                {{  html()->submit('Search') }}
+        {{ html()->form()->close() }}
+    </div>
     <div>
         <table class="table">
             <thead>
@@ -18,8 +24,8 @@
                         <td>{{$article->id}}</td>
                         <td><a class="text-decoration-none" href="{{route('articles.show', $article->id)}}">{{$article->name}}</a></td>
                         <td>
-                            <a class="text-decoration-none" href="{{route('articles.edit', $article->id)}}">@lang('views.article.index.buttons.edit')
-                            <a class="text-decoration-none text-danger" href="{{route('articles.destroy', $article->id)}}" data-confirm="Are you sure?" data-method="delete">@lang('views.article.index.buttons.delete')
+                            <a class="text-decoration-none" href="{{route('articles.edit', $article->id)}}">@lang('views.article.index.buttons.edit')</a>
+                            <a class="text-decoration-none link-danger" href="{{route('articles.destroy', $article->id)}}" data-confirm="Are you sure?" data-method="delete">@lang('views.article.index.buttons.delete')</a>
                         </td>
                     </tr>
                 @endforeach

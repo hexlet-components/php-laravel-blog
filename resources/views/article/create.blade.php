@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    {{ Form::model($article, ['url' => route('articles.store')]) }}
+    {{ html()->modelForm($article, 'POST', route('articles.store'))->open() }}
         @include('article.form')
-        {{ Form::submit('Save') }}
-    {{ Form::close() }}
+        {{ html()->submit('Save')->class('btn btn-primary') }}
+    {{ html()->closeModelForm() }}
 @endsection
