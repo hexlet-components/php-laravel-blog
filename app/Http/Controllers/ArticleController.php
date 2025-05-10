@@ -92,7 +92,7 @@ class ArticleController extends Controller
         $article->save();
         return redirect()
             ->route('articles.index')
-            ->with('success', 'Article created successfully');
+            ->with('success', 'Article updated successfully');
     }
 
     /**
