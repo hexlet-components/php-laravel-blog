@@ -11,7 +11,7 @@
         "build": "vite build"
     },
     "devDependencies": {
-        "axios": "^1.7",
+        "axios": "^1.8",
         "bootstrap": "^5.3.3",
         "cross-env": "^7.0",
         "foreman": "^3.0.1",
