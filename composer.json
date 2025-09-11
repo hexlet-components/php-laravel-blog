@@ -1,25 +1,19 @@
 {
-    "name": "laravel/laravel",
+    "name": "hexlet-components/php-laravel-blog",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
-    "license": "MIT",
     "require": {
-        "php": ">=8",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "php": ">=8.4",
+        "guzzlehttp/guzzle": "^7.9",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.7",
         "spatie/laravel-html": "^3.5"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^3.0",
+        "barryvdh/laravel-ide-helper": "^3.6",
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^8.1",
-        "phpunit/phpunit": "^11.0",
+        "phpunit/phpunit": "^12.0",
         "spatie/laravel-ignition": "^2.7",
         "squizlabs/php_codesniffer": "*"
     },

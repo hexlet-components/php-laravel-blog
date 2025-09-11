@@ -7,10 +7,9 @@ Demo: https://php-laravel-blog.hexlet.app/
 
 ## Requirements
 
-* PHP ^7.4 || ^8.1
+* PHP ^8.4, Composer
+* Node.js 24+ & npm
 * Extensions: mbstring, curl, dom, xml,zip, sqlite3
-* Composer
-* Node.js & npm
 * SQLite for local
 * [heroku cli](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
 

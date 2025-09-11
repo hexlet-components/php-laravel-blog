@@ -1,35 +1,31 @@
 ---
 
-version: '3'
-
 services:
-
   db:
-    image: postgres:14.4-bullseye
+    image: postgres:17-alpine
     environment:
       POSTGRES_PASSWORD: password
     volumes:
       - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
-  web:
+  app:
     build:
       context: .
     command: make start
     ports:
       - "8000:8000"
-    # env_file: '.env'
     volumes:
-      # - "web_static:/web/priv/static"
-      - ".:/app"
-      # - "~/.bash_history:/root/.bash_history:cached"
-      # - ".bashrc:/root/.bashrc:cached"
-      - "/tmp:/tmp"
+      - .:/app
     depends_on:
       - db
 
 volumes:
   pgdata:
-  # web_node_modules:
-  # web_static:
-  # app_build:
-  # app_deps:
