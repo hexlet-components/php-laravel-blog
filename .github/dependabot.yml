@@ -8,9 +8,16 @@ updates:
     labels: [dependencies, automated, actions]
     groups:
       actions-minor-patch:
-        update-types: [minor, patch]
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
       actions-major:
-        update-types: [major]
+        patterns:
+          - "*"
+        update-types:
+          - major
   # PHP dev
   - package-ecosystem: composer
     directory: /
