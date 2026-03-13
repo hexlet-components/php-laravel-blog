@@ -17,7 +17,7 @@
         "foreman": "^3.0.1",
         "jquery": "^3.7",
         "laravel-vite-plugin": "^2.0",
-        "lodash": "^4.17.21",
+        "lodash": "^4.17.23",
         "npm-check-updates": "^18.1.0",
         "popper.js": "^1.16",
         "resolve-url-loader": "^5.0.0",
