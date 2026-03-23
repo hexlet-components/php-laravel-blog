@@ -5,7 +5,7 @@
         "php": ">=8.4",
         "guzzlehttp/guzzle": "^7.10",
         "laravel/framework": "^12.54.1",
-        "laravel/tinker": "^2.11.1",
+        "laravel/tinker": "^3.0.0",
         "spatie/laravel-html": "^3.12.1"
     },
     "require-dev": {
