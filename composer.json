@@ -4,7 +4,7 @@
     "require": {
         "php": ">=8.4",
         "guzzlehttp/guzzle": "^7.10",
-        "laravel/framework": "^12.54.1",
+        "laravel/framework": "^13.13.0",
         "laravel/tinker": "^3.0.0",
         "spatie/laravel-html": "^3.12.1"
     },
