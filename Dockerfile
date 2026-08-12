@@ -17,8 +17,8 @@ WORKDIR /app
 
 COPY . .
 RUN composer install
-RUN npm ci
-RUN npm run build
+RUN pnpm install --frozen-lockfile
+RUN pnpm run build
 
 RUN > database/database.sqlite
 

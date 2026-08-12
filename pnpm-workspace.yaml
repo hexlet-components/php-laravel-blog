@@ -1,0 +1,4 @@
+# @parcel/watcher нужен только для `sass --watch`, сборке он не требуется,
+# поэтому его постинсталл запрещён явно.
+allowBuilds:
+  '@parcel/watcher': false
