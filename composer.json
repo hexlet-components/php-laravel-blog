@@ -2,7 +2,7 @@
     "name": "hexlet-components/php-laravel-blog",
     "type": "project",
     "require": {
-        "php": ">=8.4",
+        "php": ">=8.5",
         "guzzlehttp/guzzle": "^7.10",
         "laravel/framework": "^13.13.0",
         "laravel/tinker": "^3.0.0",

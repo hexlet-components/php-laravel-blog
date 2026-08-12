@@ -4,7 +4,7 @@ start:
 	php artisan serve --host 0.0.0.0
 
 start-frontend:
-	npm run dev
+	pnpm run dev
 
 install: setup
 
@@ -15,12 +15,12 @@ setup:
 	touch database/database.sqlite
 	php artisan migrate
 	php artisan db:seed
-	npm ci
-	npm run build
+	pnpm install --frozen-lockfile
+	pnpm run build
 	make ide-helper
 
 watch:
-	npm run watch
+	pnpm run watch
 
 migrate:
 	php artisan migrate

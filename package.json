@@ -2,8 +2,9 @@
     "private": true,
     "name": "php-laravel-blog",
     "version": "1.0.0",
+    "packageManager": "pnpm@11.20.0",
     "engines": {
-        "node": ">=22"
+        "node": ">=26"
     },
     "type": "module",
     "scripts": {
