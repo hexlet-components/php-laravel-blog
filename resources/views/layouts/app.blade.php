@@ -5,34 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>PHP Laravel Blog</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="csrf-param" content="_token" />
-        @vite(['resources/js/app.js'])
+        @vite(['resources/css/app.css'])
     </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">PHP Laravel Blog</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="/">@lang('layouts.app.home')</a>
-                        <a class="nav-link" href="{{ route('pages.show', ['page' => 'about']) }}">
-                        @lang('layouts.app.about')</a>
-                        <a class="nav-link" href="{{ route('articles.index') }}">
-                        @lang('layouts.app.articles')</a>
-                    </div>
+    <body class="flex min-h-screen flex-col bg-gray-50 text-gray-900">
+        <nav class="border-b border-gray-200 bg-white">
+            <div class="mx-auto flex max-w-5xl flex-wrap items-center gap-6 px-4 py-3">
+                <a class="text-lg font-semibold" href="/">PHP Laravel Blog</a>
+                <div class="flex flex-wrap gap-4">
+                    <a class="text-sm text-gray-600 hover:text-gray-900" aria-current="page" href="/">@lang('layouts.app.home')</a>
+                    <a class="text-sm text-gray-600 hover:text-gray-900" href="{{ route('pages.show', ['page' => 'about']) }}">@lang('layouts.app.about')</a>
+                    <a class="text-sm text-gray-600 hover:text-gray-900" href="{{ route('articles.index') }}">@lang('layouts.app.articles')</a>
                 </div>
             </div>
         </nav>
 
-        <div class="container">
-            <h1>@yield('header')</h1>
+        <div class="mx-auto w-full max-w-5xl flex-1 px-4 pb-10">
+            @if (session('flash'))
+                <div class="mt-4 rounded border border-green-200 bg-green-50 px-4 py-3 text-green-800">{{ session('flash') }}</div>
+            @endif
+
+            @hasSection('header')
+                <h1 class="mt-6 mb-4 text-3xl font-bold">@yield('header')</h1>
+            @endif
+
             <div>
                 @yield('content')
             </div>
         </div>
-
     </body>
 </html>
