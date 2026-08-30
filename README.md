@@ -5,11 +5,11 @@
 
 ## Requirements
 
-* PHP ^8.4, Composer
-* Node.js 24+ & npm
-* Extensions: mbstring, curl, dom, xml,zip, sqlite3
-* SQLite for local
-* [heroku cli](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
+- PHP ^8.4, Composer
+- Node.js 24+ & npm
+- Extensions: mbstring, curl, dom, xml,zip, sqlite3
+- SQLite for local
+- [heroku cli](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
 
 ## Setup
 
