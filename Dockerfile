@@ -10,6 +10,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
     && php -r "unlink('composer-setup.php');"
 
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN curl -sL https://deb.nodesource.com/setup_26.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install --global pnpm@12
@@ -21,6 +22,6 @@ RUN composer install
 RUN pnpm install --frozen-lockfile
 RUN pnpm run build
 
-RUN > database/database.sqlite
+RUN touch database/database.sqlite
 
 CMD ["bash", "-c", "php artisan migrate:refresh --seed --force && php artisan serve --host=0.0.0.0 --port=$PORT"]
