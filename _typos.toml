@@ -1,0 +1,3 @@
+[default.extend-words]
+# Имя сервиса Illuminate Encrypter в комментариях скелета.
+encrypter = "encrypter"
